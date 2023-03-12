@@ -12,7 +12,7 @@ const RootLayout = () => {
                     <Typography
                         variant="h6"
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        textAlign='center'
                     >
                         Posts App
                     </Typography>
