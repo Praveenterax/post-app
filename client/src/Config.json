@@ -1,6 +1,6 @@
 {
-    "serverURL" : "http://localhost:4001",
-    "postsPageTitle": "Posts",
+    "serverURL" : "https://praveenterax-post-api.onrender.com",
+    "postsPageTitle": "Feed",
     "postPageTitle":"View Post",
     "errorPageTitle":"404 Page Not Found"
 }
