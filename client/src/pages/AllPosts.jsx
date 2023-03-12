@@ -33,7 +33,7 @@ const AllPosts = () => {
   };
   return (
     <>
-      {!loading && <SpinnerComponent />}
+      {loading && <SpinnerComponent />}
       <Typography component='h3' variant='h2' align='center' gutterBottom>Your Feed</Typography>
       {(!posts || posts.length === 0) && <Typography textAlign='center'>Currently no posts to display!</Typography>}
 
