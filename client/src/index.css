@@ -17,13 +17,9 @@ code {
 .spinner {
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
   background-color: rgba(0,0,0,0.1);
   position: absolute;
   z-index: 100;
-}
-.spinner img {
-  position: fixed;
-  margin: auto auto;
-  top: 35vh;
-  left: 42vw;
 }

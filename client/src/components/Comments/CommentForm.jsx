@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useRef } from 'react';
 import { useParams } from "react-router-dom";
-import { Box, TextField, Button } from '@mui/material';
+import { Box, TextField, Button, CircularProgress } from '@mui/material';
 
 import Config from "../../Config.json";
 
@@ -12,6 +12,7 @@ const CommentForm = ({ updateComments }) => {
     const commentRef = useRef();
 
     const [fieldError, setFieldError] = useState({ error: false, message: ' ' });
+    const [loading, setLoading] = useState(false);
 
     const submitCommentHandler = (event) => {
         event.preventDefault();
@@ -20,9 +21,11 @@ const CommentForm = ({ updateComments }) => {
             setFieldError({ error: true, message: 'Comment should not be empty' });
             return;
         }
+        setLoading(true);
         setFieldError({ error: false, message: ' ' });
         const body = { comment: value };
         axios.post(`${Config.serverURL}/add-comment/${postId}`, body).then(res => {
+            setLoading(false);
             updateComments(res.data.comments);
             commentRef.current.value = '';
             commentRef.current.blur();
@@ -43,7 +46,29 @@ const CommentForm = ({ updateComments }) => {
                     helperText={fieldError.message}
                     onFocus={() => setFieldError({ error: false, message: ' ' })}
                 />
-                <Button type='submit' variant='contained' sx={{ width: { xs: '100%', sm: '100%', md: '20%', lg: '20%' }, marginY: '0.8rem' }}>Add Comment</Button>
+                <Box sx={{ position: 'relative', width: { xs: '100%', sm: '100%', md: '20%', lg: '20%' } }}>
+                    <Button
+                        type='submit'
+                        variant="contained"
+                        disabled={loading}
+                        sx={{ width: '100%' }}
+                    >
+                        Add Comment
+                    </Button>
+                    {loading && (
+                        <CircularProgress
+                            size={24}
+                            sx={{
+                                color: 'success',
+                                position: 'absolute',
+                                top: '50%',
+                                left: '50%',
+                                marginTop: '-12px',
+                                marginLeft: '-12px',
+                            }}
+                        />
+                    )}
+                </Box>
             </form>
         </Box>
 

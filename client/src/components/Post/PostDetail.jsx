@@ -4,7 +4,6 @@ import { Container } from '@mui/system';
 
 import { Line } from '../common';
 
-
 const PostDetail = ({ post }) => {
     return (
         <>
@@ -19,9 +18,9 @@ const PostDetail = ({ post }) => {
                         }
                     </CardContent>
                     <Line style={{ marginTop: '5px' }} />
-                    <CardContent style={{ height: '120px' }}>
+                    <CardContent style={{ minHeight: '120px' }}>
                         {post.description ?
-                            <Typography color="text.secondary">
+                            <Typography color="text.secondary" textAlign='justify'>
                                 {post.description}
                             </Typography> :
                             <Typography variant='caption' color='InactiveCaptionText' >No description added!</Typography>

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import spinner from "../../assets/spinner.svg";
+import { CircularProgress } from '@mui/material';
 
 export const Line = styled.div`
     margin: 10px auto;
@@ -14,7 +14,7 @@ export const Line = styled.div`
 export const SpinnerComponent = () => {
     return (
         <div className="spinner">
-            <img src={spinner} alt="Loading" />
+            <CircularProgress size={120} sx={{ position: 'absolute', top: '50%', left: '45%' }} />
         </div>
     );
 };

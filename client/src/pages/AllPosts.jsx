@@ -33,11 +33,11 @@ const AllPosts = () => {
   };
   return (
     <>
-      {loading && <SpinnerComponent />}
+      {!loading && <SpinnerComponent />}
       <Typography component='h3' variant='h2' align='center' gutterBottom>Your Feed</Typography>
-      {(!posts || posts.length === 0) && <Typography>Currently no posts to display!</Typography>}
+      {(!posts || posts.length === 0) && <Typography textAlign='center'>Currently no posts to display!</Typography>}
 
-      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2 }}>
+      <Grid sx={{ marginBottom: '1.5rem' }} container rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1, lg: 2 }}>
         {renderPosts()}
       </Grid>
     </>
