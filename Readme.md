@@ -93,7 +93,7 @@ Getting started, to avoid hassle at a later part, go ahead and create an account
 
 Praveen Dunga - [@Praveenterax](https://instagram.com/Praveenterax) - praveendunga789@gmail.com
 
-Project Link: [https://praveenterax-portfolio.netlify.app](https://praveenterax-portfolio.netlify.app)
+Project Link: [https://praveenterax-post-app.onrender.com/](https://praveenterax-post-app.onrender.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
